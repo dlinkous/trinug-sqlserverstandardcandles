@@ -1,0 +1,10 @@
+CREATE TABLE SalesHistory
+(
+	Id INT NOT NULL IDENTITY(1, 1),
+	LocationId INT NOT NULL,
+	UnitsSold INT NOT NULL,
+	CONSTRAINT PK_SalesHistory PRIMARY KEY CLUSTERED (Id ASC)
+)
+INSERT INTO SalesHistory
+SELECT TOP (1000000) ABS(CHECKSUM(NEWID())), ABS(CHECKSUM(NEWID())) % 10
+FROM sys.columns c1, sys.columns c2, sys.columns c3

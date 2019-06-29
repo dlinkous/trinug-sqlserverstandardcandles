@@ -1,0 +1,10 @@
+ALTER TABLE SalesHistory
+ADD LocationName VARCHAR(100) NULL
+GO
+UPDATE SalesHistory SET LocationName = NEWID()
+GO
+ALTER TABLE SalesHistory
+ALTER COLUMN LocationName VARCHAR(100) NOT NULL
+GO
+ALTER INDEX ALL ON SalesHistory REBUILD
+GO

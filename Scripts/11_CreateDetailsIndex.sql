@@ -1,0 +1,2 @@
+CREATE NONCLUSTERED INDEX IX_SalesHistoryDetails_SalesHistoryId_UnitId_QualityAssuranceId
+ON SalesHistoryDetails (SalesHistoryId ASC, UnitId ASC, QualityAssuranceId ASC)

@@ -1,0 +1,21 @@
+CREATE TABLE SalesHistoryDetails
+(
+	Id INT NOT NULL IDENTITY(1, 1),
+	SalesHistoryId INT NOT NULL,
+	UnitId INT NOT NULL,
+	QualityAssuranceId INT NOT NULL,
+	CONSTRAINT PK_SalesHistoryDetails PRIMARY KEY CLUSTERED (Id ASC),
+	CONSTRAINT FK_SalesHistoryDetails_SalesHistory FOREIGN KEY (SalesHistoryId) REFERENCES SalesHistory (Id)
+)
+INSERT INTO SalesHistoryDetails
+SELECT sh.Id, ABS(CHECKSUM(NEWID())), ABS(CHECKSUM(NEWID()))
+FROM SalesHistory sh
+UNION ALL
+SELECT sh.Id, ABS(CHECKSUM(NEWID())), ABS(CHECKSUM(NEWID()))
+FROM SalesHistory sh
+UNION ALL
+SELECT sh.Id, ABS(CHECKSUM(NEWID())), ABS(CHECKSUM(NEWID()))
+FROM SalesHistory sh
+UNION ALL
+SELECT sh.Id, ABS(CHECKSUM(NEWID())), ABS(CHECKSUM(NEWID()))
+FROM SalesHistory sh

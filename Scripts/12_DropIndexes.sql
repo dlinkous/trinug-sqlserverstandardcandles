@@ -1,0 +1,5 @@
+DROP INDEX IX_SalesHistory_LocationId_UnitsSold_LocationName
+ON SalesHistory
+DROP INDEX IX_SalesHistoryDetails_SalesHistoryId_UnitId_QualityAssuranceId
+ON SalesHistoryDetails
+
